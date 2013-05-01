@@ -1,0 +1,7 @@
+{
+	"name": "angulartest",
+	"version": "0.0.1",
+	"dependencies": {
+		"jade": "0.28.x"
+	}
+}

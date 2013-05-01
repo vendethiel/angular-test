@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <script src="components/angular/angular.min.js"></script>
+    <script src="components/sugar/release/sugar.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div ng-controller="TaskCtrl">
+      <div ng-hide="tasks.length == 0"><span class="info">You have {{remaining()}} of {{tasks.length}} to do.</span></div><a href="" ng-click="clean()" ng-hide="!(tasks.length - remaining())">Remove checked.</a>
+      <ul>
+        <li ng-repeat="task in tasks">
+          <input type="checkbox" ng-model="task.done"><span class="done-{{task.done}}">{{task.text}}</span>
+        </li>
+      </ul><a href="" ng-click="formMode = true" ng-hide="formMode">Add task</a>
+      <form ng-submit="addTask()" ng-show="formMode">
+        <input ng-model="taskText" placeholder="new task">
+        <input type="submit" value="Add!">
+      </form>
+    </div>
+  </body>
+</html>

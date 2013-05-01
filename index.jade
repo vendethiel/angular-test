@@ -1,0 +1,26 @@
+!!! 5
+html(ng-app)
+	head
+		- var vendors = ['components/angular/angular.min.js', 'components/sugar/release/sugar.min.js']
+		- var scripts = ['script.js']
+		each script in vendors.concat(scripts)
+			script(src=script)
+
+		- var styles = ['style.css']
+		each style in styles
+			link(rel="stylesheet", href=style)
+	body
+		div(ng-controller="TaskCtrl")
+			div(ng-hide="tasks.length == 0")
+				span.info You have {{remaining()}} of {{tasks.length}} to do.
+			a(href="", ng-click="clean()", ng-hide="!(tasks.length - remaining())") Remove checked.
+
+			ul
+				li(ng-repeat="task in tasks")
+					input(type="checkbox", ng-model="task.done")
+					span(class="done-{{task.done}}") {{task.text}}
+
+			a(href="", ng-click="formMode = true", ng-hide="formMode") Add task
+			form(ng-submit="addTask()", ng-show="formMode")
+				input(ng-model="taskText", placeholder="new task")
+				input(type="submit", value="Add!")
