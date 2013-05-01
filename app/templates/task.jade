@@ -1,0 +1,14 @@
+div(ng-controller="TaskCtrl")
+	div(ng-hide="tasks.length == 0")
+		span.info You have {{remaining()}} of {{tasks.length}} to do.
+	a(href="", ng-click="clean()", ng-hide="!(tasks.length - remaining())") Remove checked.
+
+	ul
+		li(ng-repeat="task in tasks")
+			input(type="checkbox", ng-model="task.done")
+			span(class="done-{{task.done}}") {{task.text}}
+
+	a(href="", ng-click="formMode = true", ng-hide="formMode") Add task
+	form(ng-submit="addTask()", ng-show="formMode")
+		input(ng-model="taskText", placeholder="new task")
+		input(type="submit", value="Add!")

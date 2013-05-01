@@ -1,7 +1,18 @@
 {
-	"name": "angulartest",
-	"version": "0.0.1",
-	"dependencies": {
-		"jade": "0.28.x"
-	}
+  "name": "angular-test",
+  "version": "0.0.1",
+  "github": "Nami-Doc/angular-test",
+  "dependencies": {},
+  "devDependencies": {
+    "javascript-brunch": "1.5.x",
+    "LiveScript": ">= 1.1.1",
+    "LiveScript-brunch": "1.5.x",
+    "css-brunch": "1.5.x",
+    "stylus-brunch": "1.5.x",
+    "jade-brunch": "1.4.x",
+    "static-jade-brunch": ">= 1.4.0 <= 1.4.5 || >= 1.4.8 < 1.5",
+    "auto-reload-brunch": "1.5.x",
+    "uglify-js-brunch": "1.3.x",
+    "clean-css-brunch": "1.5.x"
+  }
 }

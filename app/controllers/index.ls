@@ -1,0 +1,2 @@
+exports <<<
+	'TaskCtrl': require './task'
