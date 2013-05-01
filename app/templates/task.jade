@@ -1,12 +1,16 @@
 div(ng-controller="TaskCtrl")
 	div(ng-hide="tasks.length == 0")
 		span.info You have {{remaining()}} of {{tasks.length}} to do.
-	a(href="", ng-click="clean()", ng-hide="!(tasks.length - remaining())") Remove checked.
+	a(href="", ng-click="clean()", ng-class="{opaque: !hasChecked()}") Remove checked.
 
 	ul
 		li(ng-repeat="task in tasks")
-			input(type="checkbox", ng-model="task.done")
-			span(class="done-{{task.done}}") {{task.text}}
+			div(ng-hide="task.editMode")
+				input(type="checkbox", ng-model="task.done")
+				span(class="done-{{task.done}}") {{task.text}}
+				span.edit-button(ng-hide="task.done", ng-click="task.editMode = true")!= ' &bull; Edit'
+			form(ng-show="task.editMode", ng-submit="task.editMode = false")
+				input(ng-model="task.text", ui-event="{blur: 'task.editMode = false'}")
 
 	a(href="", ng-click="formMode = true", ng-hide="formMode") Add task
 	form(ng-submit="addTask()", ng-show="formMode")

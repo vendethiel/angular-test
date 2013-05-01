@@ -5,6 +5,9 @@ module.exports = function TaskCtrl($scope)
 			* done: false text: 'hey bruv'
 		formMode: false
 
+		hasChecked: ->
+			$scope.tasks.count (.done)
+
 		remaining: ->
 			$scope.tasks.count -> not it.done
 
@@ -14,4 +17,4 @@ module.exports = function TaskCtrl($scope)
 			$scope.formMode = false
 
 		clean: !->
-			$scope.tasks = tasks.filter -> not it.done
+			$scope.tasks .= filter -> not it.done

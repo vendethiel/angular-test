@@ -1,4 +1,4 @@
-app = angular.module 'app' <[ngResource]>
+app = angular.module 'app' <[ngResource ui]>
 
 for name, ctrl of require 'controllers'
 	app.controller name, ctrl

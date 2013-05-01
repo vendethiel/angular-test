@@ -10,11 +10,16 @@ exports.config =
         before:
           'vendor/angular/angular.js'
           'vendor/angular-resource/angular-resource.js'
+          'vendor/angular-ui/angular-ui.js'
           'vendor/sugar/sugar-full.development.js'
 
     stylesheets:
       joinTo:
         'css/app.css': /^(app|vendor)/
+      order:
+        before:
+          'vendor/angular-ui.css'
+          ...
 
     templates:
       joinTo: 'js/templates.js'
