@@ -6,9 +6,7 @@ build.xml
 .project
 .settings
 .idea/*
-app/assets/*html
-app/assets/partials/app/*.html
-
+app/assets/
 _public
 node_modules/*
 npm-debug.log
