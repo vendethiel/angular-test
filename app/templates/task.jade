@@ -6,11 +6,11 @@ div(ng-controller="TaskCtrl")
 	ul
 		li(ng-repeat="task in tasks")
 			div(ng-hide="task.editMode")
-				input(type="checkbox", ng-model="task.done")
+				input(type="checkbox", ng-change="save()", ng-model="task.done")
 				span(class="done-{{task.done}}") {{task.text}}
-				span.edit-button(ng-hide="task.done", ng-click="task.editMode = true")!= ' &bull; Edit'
-			form(ng-show="task.editMode", ng-submit="task.editMode = false")
-				input(ng-model="task.text", ui-event="{blur: 'task.editMode = false'}")
+
+				span.edit-button(ng-hide="task.done", ng-click="startEdit(task)")!= ' &bull; Edit'
+			input(ng-show="task.editMode", ng-model="task.text", ui-keydown="{enter: 'saveEdit(task)', esc: 'cancelEdit(task)'}")
 
 	a(href="", ng-click="formMode = true", ng-hide="formMode") Add task
 	form(ng-submit="addTask()", ng-show="formMode")

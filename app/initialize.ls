@@ -1,4 +1,7 @@
-app = angular.module 'app' <[ngResource ui]>
+# depends on :
+# - angular-ui
+# - templates (jade-angularjs-brunch precompiling)
+app = angular.module 'app' <[ui templates]>
 
 for name, ctrl of require 'controllers'
 	app.controller name, ctrl

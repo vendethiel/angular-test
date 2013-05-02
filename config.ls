@@ -22,7 +22,14 @@ exports.config =
           ...
 
     templates:
-      joinTo: 'js/templates.js'
+      joinTo:
+        'js/dontUseMe' : /^app/ #slutty hack for Jade-auto-compiling
+
+  plugins:
+    jade:
+      pretty: true
+    jade_angular:
+      modules_folder: 'templates'
 
   # Enable or disable minifying of result js / css files.
   # minify: true
