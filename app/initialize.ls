@@ -1,10 +1,12 @@
 # depends on :
 # - angular-ui
 # - templates (jade-angularjs-brunch precompiling)
+angular.module 'templates' <[anime.templates]>
+
 app = angular.module 'app' <[ui templates]>
 
 for controller in <[Anime]>
-	app.controller "#{controller}Ctrl" require "#controller/controller"
+	app.controller "#{controller}Ctrl" require "src/#{controller.toLowerCase!}/controller"
 
 app.config require 'router'
 
