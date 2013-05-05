@@ -1,6 +1,6 @@
 module.exports = not function Router($routeProvider, $locationProvider)
 	$routeProvider
-		.when '/task' template-url: '/templates/task.html'
-		.otherwise redirect-to: '/task'
+		.when '/anime' template-url: '/Anime/templates/index.html' title: 'Animes'
+		.otherwise redirect-to: '/anime'
 
 	$locationProvider.html5Mode true

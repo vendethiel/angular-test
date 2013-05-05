@@ -1,0 +1,15 @@
+div(ng-controller="AnimeCtrl")
+	table#animes
+		tr(ng-repeat="anime in animes | orderBy:orderClause")
+			td.anime-name {{anime.name}} 
+			td: b ({{anime.ep}})
+			td: span(ng-click="changeEp(anime, 1)") [+]
+			td: span(ng-click="changeEp(anime, -1)") [-]
+			td: span.delete-button(ng-click="removeAnime(anime)")= ' [x]'
+
+
+	a(href="", ng-click="formMode = true", ng-hide="formMode") Add anime
+	form(ng-submit="addAnime()", ng-show="formMode", ui-keypress="{27: 'formMode = false'}")
+		input(ng-model="animeName", placeholder="new anime name")
+		input(ng-model="animeEp", placeholder="ep", size="1")
+		input(type="submit", value="Add!")
