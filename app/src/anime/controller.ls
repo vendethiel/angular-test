@@ -1,4 +1,6 @@
-module.exports = function AnimeCtrl($scope)
+module.exports = function AnimeCtrl($scope, titleService)
+	titleService.set-title 'Animes'
+
 	animes = try JSON.parse localStorage.animes
 	animes or= []
 
@@ -15,7 +17,7 @@ module.exports = function AnimeCtrl($scope)
 			@form-mode = false
 			return unless @new-anime.name
 
-			+ = @new-anime.ep = 0
+			+ = @new-anime.ep
 			@new-anime.ep = 0 is isNaN @new-anime.ep
 
 			@animes.push @new-anime
