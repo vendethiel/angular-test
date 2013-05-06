@@ -1,18 +1,23 @@
 # depends on :
 # - angular-ui
 # - templates (jade-angularjs-brunch precompiling)
-angular.module 'templates' <[anime.templates]>
+#FUCK YOUangular.module 'templates' <[anime.templates]>
 
-app = angular.module 'app' <[ui templates]>
+for name in <[anime]>
+	require "src/#name"
 
-for controller in <[Anime]>
-	app.controller "#{controller}Ctrl" require "src/#{controller.toLowerCase!}/controller"
+app = angular.module 'app' <[ui anime]>
 
-app.config require 'router'
+app.config !($locationProvider) ->
+	$locationProvider.html5Mode true
 
+
+# titleize
 app.run !($location, $rootScope) ->
 	$rootScope.$on '$routeChangeSuccess' (ev, current, previous) ->
-		$rootScope.title = current.$$route.title
+		console.dir current
+		$rootScope.title = current.$$route?title
 
-<- angular.element document .ready
+# bind for setup
+$templateCache <- angular.element document .ready
 angular.bootstrap document, <[app]>

@@ -9,8 +9,8 @@ exports.config =
       order:
         before:
           'vendor/angular/angular.js'
-          'vendor/angular-resource/angular-resource.js'
-          'vendor/angular-ui/angular-ui.js'
+          #'vendor/angular-resource/angular-resource.js'
+          #'vendor/angular-ui/angular-ui.js'
           'vendor/sugar/sugar-full.development.js'
 
     stylesheets:
