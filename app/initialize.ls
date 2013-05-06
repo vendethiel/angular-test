@@ -1,12 +1,10 @@
 # depends on :
-# - angular-ui
 # - templates (jade-angularjs-brunch precompiling)
-#FUCK YOUangular.module 'templates' <[anime.templates]>
 
-for name in <[anime]>
+for name in <[anime shared]>
 	require "src/#name"
 
-app = angular.module 'app' <[ui anime]>
+app = angular.module 'app' <[ui anime shared]>
 
 app.config !($locationProvider) ->
 	$locationProvider.html5Mode true
@@ -19,5 +17,5 @@ app.run !($location, $rootScope) ->
 		$rootScope.title = current.$$route?title
 
 # bind for setup
-$templateCache <- angular.element document .ready
+<- angular.element document .ready
 angular.bootstrap document, <[app]>

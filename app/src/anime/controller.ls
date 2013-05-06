@@ -15,9 +15,8 @@ module.exports = function AnimeCtrl($scope)
 			@form-mode = false
 			return unless @new-anime.name
 
-			if not @new-anime.ep or isNaN @new-anime.ep
-				@new-anime.ep = 0
-			else + = @new-anime.ep
+			+ = @new-anime.ep = 0
+			@new-anime.ep = 0 is isNaN @new-anime.ep
 
 			@animes.push @new-anime
 			@save!
