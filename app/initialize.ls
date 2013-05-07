@@ -4,10 +4,17 @@
 for name in <[anime shared]>
 	require "src/#name"
 
+/*
+<[
+	deps (like ui)
+	own components (like titleService)
+	modules (like anime)
+]>
+*/
 app = angular.module 'app' <[
-	ui
+	
 	titleService
-	anime shared
+	anime
 ]>
 
 app.config !($locationProvider) ->
