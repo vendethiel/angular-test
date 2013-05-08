@@ -1,2 +1,4 @@
-div(ng-controller="ArticleCtrl")
-	| Hey
+div#articles(ng-controller="ArticleCtrl")
+	article(ng-repeat="article in articles")
+		.infos By {{article.author}}
+		p {{article.content}}
