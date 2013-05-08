@@ -1,4 +1,3 @@
 module.exports = !($routeProvider) ->
 	$routeProvider
-		.when '/anime' template-url: '/src/Anime/templates/index.html'
-		.otherwise redirect-to: '/anime'
+		.when '/anime' template-url: '/src/anime/templates/index.html'
