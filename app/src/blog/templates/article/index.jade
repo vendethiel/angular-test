@@ -1,4 +1,7 @@
-div#articles(ng-controller="ArticleCtrl")
-	article(ng-repeat="article in articles")
-		.infos By {{article.author}}
-		p {{article.content}}
+extends ../layout
+
+block body
+	div#articles(ng-controller="ArticleCtrl")
+		article(ng-repeat="article in articles")
+			.infos By {{article.author}} in {{article.category}}
+			p {{article.content}}

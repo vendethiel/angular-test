@@ -1,0 +1,4 @@
+div#categories(ng-controller="CategoryCtrl")
+	ul
+		li(ng-repeat="category in categories")
+			a(href="/category/{{category.id}}") {{category.name}}
