@@ -4,7 +4,6 @@
   "github": "Nami-Doc/angular-test",
   "dependencies": {},
   "devDependencies": {
-    "javascript-brunch": "1.5.x",
     "LiveScript": ">= 1.1.1",
     "LiveScript-brunch": "1.5.x",
     
@@ -18,6 +17,10 @@
     "auto-reload-brunch": "1.5.x",
     
     "uglify-js-brunch": "1.3.x",
-    "clean-css-brunch": "1.5.x"
+    "clean-css-brunch": "1.5.x",
+
+    "bower-stylesheet-brunch": "git://github.com/angular-brunch/bower-stylesheet-brunch/#master",
+    "bower-javascript-brunch": "git://github.com/angular-brunch/bower-javascript-brunch/#master",
+    "bower-asserts-brunch": "git://github.com/angular-brunch/bower-assets-brunch/#master"
   }
 }

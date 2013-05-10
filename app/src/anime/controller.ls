@@ -5,9 +5,6 @@ module.exports = function AnimeCtrl($scope, titleService)
 	animes or= []
 
 	$scope <<<
-		save: !->
-			localStorage.animes = JSON.stringify @animes
-
 		animes: animes
 		new-anime: {}
 		form-mode: false
@@ -18,19 +15,19 @@ module.exports = function AnimeCtrl($scope, titleService)
 			return unless @new-anime.name
 
 			+ = @new-anime.ep
-			@new-anime.ep = 0 is isNaN @new-anime.ep
+			@new-anime.ep = 0 if isNaN @new-anime.ep
 
 			@animes.push @new-anime
-			@save!
 
 			@new-anime = {}
 			@form-mode = false
 
 		removeAnime: !->
-			@animes.remove it
-			@save!
+			@animes.splice it, 1
 
 		changeEp: !(anime, modifier) ->
 			@anime.ep += modifier
 			@anime.ep >?= 0
-			@save!
+
+	$scope.$watch !->
+		localStorage.animes = JSON.stringify $scope.animes

@@ -9,5 +9,6 @@ module.exports = function ArticleCtrl($scope, $routeParams, titleService)
 			Hey you, blabla
 		"""
 
-	if $routeParams.cat
-		$scope.articles = [article for article in articles when article.category is that]
+	$scope.articles = if $routeParams.cat
+		[article for article in articles when article.category is that]
+	else articles

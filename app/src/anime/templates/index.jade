@@ -5,7 +5,7 @@ div(ng-controller="AnimeCtrl")
 			td: b ({{anime.ep}})
 			td: span(ng-click="changeEp(anime, 1)") [+]
 			td: span(ng-click="changeEp(anime, -1)") [-]
-			td: span.delete-button(ng-click="removeAnime(anime)")= ' [x]'
+			td: span.delete-button(ng-click="removeAnime($index)")= ' [x]'
 
 
 	a(href="", ng-click="formMode = true", ng-hide="formMode") Add anime
