@@ -1,7 +1,7 @@
 # depends on :
 # - templates (jade-angularjs-brunch precompiling)
 
-for name in <[anime blog shared]>
+for name in <[anime blog security shared]>
 	require "src/#name"
 
 /*
@@ -14,7 +14,7 @@ for name in <[anime blog shared]>
 app = angular.module 'app' <[
 	
 	titleService
-	anime blog
+	anime blog security shared
 ]>
 
 app.config !($locationProvider) ->

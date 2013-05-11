@@ -1,4 +1,4 @@
-module.exports = function AnimeCtrl($scope, titleService)
+module.exports = not function AnimeCtrl($scope, titleService)
 	titleService.set-title 'Animes'
 
 	animes = try JSON.parse localStorage.animes

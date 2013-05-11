@@ -1,4 +1,4 @@
-module.exports = function ArticleCtrl($scope, $routeParams, titleService)
+module.exports = not function ArticleCtrl($scope, $routeParams, titleService)
 	titleService.set-title 'Blog'
 
 	articles =

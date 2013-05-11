@@ -1,5 +1,5 @@
 div(ng-controller="AnimeCtrl")
-	table#animes
+	table.table.table-striped#animes
 		tr(ng-repeat="anime in animes | orderBy:orderClause")
 			td.anime-name {{anime.name}} 
 			td: b ({{anime.ep}})
