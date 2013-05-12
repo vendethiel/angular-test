@@ -1,5 +1,6 @@
 .nav-collapse.collapse
-	p.navbar-text.pull-right(ng-show="isAuthenticated")
+	p.navbar-text.pull-right(ng-show="user")
 		span.navbar-link
-			| Ya logged, maybe.
-	div(ng-hide="isAuthenticated", ng-include="'/src/security/templates/login/form.html'")
+			| Logged as {{user.name}}. 
+			a(href="/logout") Logout.
+	div(ng-hide="user", ng-include="'/src/security/templates/login/form.html'")

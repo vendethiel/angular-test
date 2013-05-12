@@ -1,11 +1,10 @@
-module.exports = not function AnimeCtrl($scope, titleService)
+module.exports = not function AnimeCtrl($scope, currentUser, titleService)
 	titleService.set-title 'Animes'
 
-	animes = try JSON.parse localStorage.animes
-	animes or= []
+	currentUser.get!then !(user) ->
+		console.log user
 
 	$scope <<<
-		animes: animes
 		new-anime: {}
 		form-mode: false
 		order-clause: '-ep'
@@ -28,6 +27,3 @@ module.exports = not function AnimeCtrl($scope, titleService)
 		changeEp: !(anime, modifier) ->
 			@anime.ep += modifier
 			@anime.ep >?= 0
-
-	$scope.$watch !->
-		localStorage.animes = JSON.stringify $scope.animes

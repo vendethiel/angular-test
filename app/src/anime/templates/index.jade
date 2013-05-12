@@ -1,11 +1,16 @@
 div(ng-controller="AnimeCtrl")
-	table.table.table-striped#animes
-		tr(ng-repeat="anime in animes | orderBy:orderClause")
-			td.anime-name {{anime.name}} 
-			td: b ({{anime.ep}})
-			td: span(ng-click="changeEp(anime, 1)") [+]
-			td: span(ng-click="changeEp(anime, -1)") [-]
-			td: span.delete-button(ng-click="removeAnime($index)")= ' [x]'
+	// .table-striped is just ... not noticeable on my screen
+	table#animes.table
+		thead: tr
+			th Anime name
+			th Last ep seen
+		tbody
+			tr(ng-repeat="anime in animes | orderBy:orderClause")
+				td.anime-name {{anime.name}} 
+				td: b {{anime.ep}}
+				td: span(ng-click="changeEp(anime, 1)") [+]
+				td: span(ng-click="changeEp(anime, -1)") [-]
+				td: span.delete-button(ng-click="removeAnime($index)")= ' [x]'
 
 
 	a(href="", ng-click="formMode = true", ng-hide="formMode") Add anime

@@ -31,5 +31,11 @@ exports.config =
     jade_angular:
       modules_folder: 'templates'
 
+  server:
+    path: 'server.ls'
+    port: 3333
+    base: ''
+    run: false
+
   # Enable or disable minifying of result js / css files.
   # minify: true

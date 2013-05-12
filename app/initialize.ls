@@ -10,6 +10,13 @@ for name in <[anime blog security shared]>
 	own components (like titleService)
 	modules (like anime)
 ]>
+
+when requiring, it should be :
+<[
+	own (ie titleService)
+	angular (ie ngResource)
+	generates (ie templates)
+]>
 */
 app = angular.module 'app' <[
 	
@@ -17,8 +24,10 @@ app = angular.module 'app' <[
 	anime blog security shared
 ]>
 
+#/*
 app.config !($locationProvider) ->
 	$locationProvider.html5Mode true
+#*/
 
 # titleize
 app.run !(titleService) ->
