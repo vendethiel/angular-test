@@ -10,6 +10,7 @@ exports.config =
         before:
           'vendor/angular/angular.js'
           'vendor/angular-ui/angular-ui.js'
+          'vendor/angular-resource/angular-resource.js'
 #          'vendor/sugar/sugar-full.development.js'
 
     stylesheets:

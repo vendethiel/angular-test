@@ -39,8 +39,12 @@ app.configure !->
 	#*/
 
 # API Routes
-# located under /api/
-require './server/api' <| app
+try
+	for resource in <[users animes]>
+		require "./server/#resource/routes" <| app
+catch e
+	console.log e; process.exit!
+
 
 app.startServer = !->
 	app.listen PORT, !->

@@ -1,8 +1,7 @@
-module.exports = not function AnimeCtrl($scope, currentUser, titleService)
+module.exports = not function AnimeCtrl($scope, Anime, currentUser, titleService, $http)
 	titleService.set-title 'Animes'
 
-	currentUser.get!then !(user) ->
-		console.log user
+	$scope.animes = Anime.query!
 
 	$scope <<<
 		new-anime: {}
@@ -16,14 +15,16 @@ module.exports = not function AnimeCtrl($scope, currentUser, titleService)
 			+ = @new-anime.ep
 			@new-anime.ep = 0 if isNaN @new-anime.ep
 
-			@animes.push @new-anime
-
+			@animes.push Anime.save @new-anime
+	
 			@new-anime = {}
 			@form-mode = false
 
 		removeAnime: !->
+			@animes[it]$delete!
 			@animes.splice it, 1
 
 		changeEp: !(anime, modifier) ->
 			@anime.ep += modifier
 			@anime.ep >?= 0
+			@anime.$save!
