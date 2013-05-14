@@ -23,6 +23,10 @@
 
     "lodash": "1.2.1",
     
-    "express": "3.2.4"
+    "mysql": "2.0.0-alpha8",
+    "orm": "2.0.11",
+
+    "express": "3.2.4",
+    "express-resource": "1.0.0"
   }
 }

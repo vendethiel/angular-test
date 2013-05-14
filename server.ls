@@ -1,51 +1,39 @@
-require! <[express ./config fs]>
+require! <[orm fs express]>
+{config} = require './config'
 
 module.exports = app = express!
 
-PORT = config.config.server?port ? 3333
-PUBLIC_PATH = config.config.paths?public ? 'public'
-PRIVATE_PATH = "#__dirname/server/views"
+/*
+ * Configuration
+ */
+PORT = config.server.port ? 3333
+# brunch's public path
+PUBLIC_PATH = config.paths?public ? 'public'
 
+/*
+ * Set up ORM
+ */
+app.use orm.express config.server.db,
+	define: !(db, models) ->
+		require('./server/models') db, models
 
-app.configure 'development' !->
-	app.use express.errorHandler {+dumpExceptions, +showStack}
-
-app.configure !->
-	app.set 'views' PRIVATE_PATH
-	app.set 'view engine' 'jade'
-	app.set 'view options' {-layout, +pretty}
-	
-	app.use express.bodyParser!
-	app.use express.methodOverride!
-
-	app.use express.cookieParser!
-	app.use express.session secret: 'angular-test-lol'
-
-	app.use express.static PUBLIC_PATH
-	app.use '/api' app.router
-	
-	# hack for "static"
-	# this is a "catch-all route"
-	# another option is to disable angular's html5Mode
-	INDEX = let
-		# delay index reading
-		# we need to wait for compilation before
-		# we can try to read #public/index.html
-		var index_file
-		-> index_file ?= fs.readFileSync "#PUBLIC_PATH/index.html"
-	app.use !(req, res) ->
-		res.writeHeader 200 'Content-Type': 'text/html'
-		res.end INDEX!
-	#*/
-
-# API Routes
-try
-	for resource in <[users animes]>
-		require "./server/#resource/routes" <| app
-catch e
-	console.log e; process.exit!
-
-
+/**
+ * Expose server to Brunch's watcher
+ */
 app.startServer = !->
-	app.listen PORT, !->
-		console.log "Express server started"
+	app.listen PORT, !-> console.log "Express started"
+
+/*
+ * Routing : Brunch catch-all and our API
+ */
+app.use express.static PUBLIC_PATH
+app.use '/api' require './server/api'
+
+/**
+ * Index serving (catch-all route) for angular's html5Mode
+ * Read index until it's available
+ *  (should be using a helper in production)
+ */
+app.use !(req, res) ->
+	res.writeHeader 200 'Content-Type': 'text/html'
+	res.end fs.readFileSync "#PUBLIC_PATH/index.html"
