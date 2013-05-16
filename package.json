@@ -20,8 +20,6 @@
     "clean-css-brunch": "1.5.x",
 
 
-
-    "lodash": "1.2.1",
     
     "mysql": "2.0.0-alpha8",
     "orm": "2.0.11",

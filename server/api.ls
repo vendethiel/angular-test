@@ -18,7 +18,7 @@ app.use express.session secret: 'angular-test-lol'
 /**
  * Serve resources
  */
-for resource in <[animes]> #users
+for resource in <[animes users]>
 	app.resource resource, require "./#resource"
 
 module.exports = app
