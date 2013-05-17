@@ -3,4 +3,5 @@
 		span.navbar-link
 			| Logged as {{user.name}}. 
 			a(href="/logout") Logout.
-	div(ng-hide="user", ng-include="'/src/security/templates/login/form.html'")
+	div(ng-hide="user")
+		login-form

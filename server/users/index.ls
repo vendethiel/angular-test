@@ -1,6 +1,8 @@
 require! './users'
-user-id = 1
+user-id = null #1
 
 # meh.
 export index = !(req, res) ->
-	res.send JSON.stringify users[user-id]
+	res.send if users[user-id]
+		JSON.stringify that
+	else null
