@@ -1,3 +1,6 @@
+locals =
+  title: 'AT'
+
 exports.config =
   paths:
     public: '_public'
@@ -11,7 +14,7 @@ exports.config =
           'vendor/angular/angular.js'
           'vendor/angular-ui/angular-ui.js'
           'vendor/angular-resource/angular-resource.js'
-#          'vendor/sugar/sugar-full.development.js'
+          #'vendor/sugar/sugar-full.development.js'
 
     stylesheets:
       joinTo:
@@ -27,10 +30,10 @@ exports.config =
         'js/dontUseMe' : /^app/ #slutty hack for Jade-auto-compiling
 
   plugins:
-    jade:
-      pretty: true
+    jade: {+pretty, locals}
     jade_angular:
       modules_folder: 'templates'
+      locals: locals
 
   server:
     path: 'server.ls'

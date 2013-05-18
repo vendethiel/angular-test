@@ -3,7 +3,7 @@ module.exports = !(db, models) ->
 		name: String
 		ep: Number
 		user_id: Number
-	/*
+	
 	models.user = db.define 'users',
 		username: String
 		password: String
@@ -11,4 +11,3 @@ module.exports = !(db, models) ->
 
 	models.anime.hasOne 'user', models.user, {+required}
 	models.user.hasMany 'animes', models.anime
-	#*/

@@ -1,7 +1,7 @@
 .nav-collapse.collapse
 	p.navbar-text.pull-right(ng-show="user")
 		span.navbar-link
-			| Logged as {{user.name}}. 
+			| Logged as {{user.username}}. 
 			a(href="/logout") Logout.
 	div(ng-hide="user")
 		login-form
