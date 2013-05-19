@@ -4,5 +4,5 @@ id = 1
 export index = !(req, res) ->
 	err, users <-! req.models.user.find {id}
 	res.send JSON.stringify if users.length
-		users.0<[username admin]>
+		users.0{username, admin}
 	else null

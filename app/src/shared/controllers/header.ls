@@ -1,2 +1,1 @@
-module.exports = not function HeaderCtrl($scope)
-	$scope.login = !-> alert "mdr"
+module.exports = not function HeaderCtrl($scope) =>

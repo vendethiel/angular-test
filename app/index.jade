@@ -15,8 +15,6 @@ html(lang='en')
 				enabled: true
 			};
 	body(ng-controller="AppCtrl")
-		// should have better perfs than ng-include... worth it?
-		//div(ng-include="'/src/shared/templates/header/index.html'")
 		include src/shared/templates/header.jade
 		.container(ng-view)
 
