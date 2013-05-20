@@ -20,7 +20,7 @@ when requiring, it should be :
 */
 app = angular.module 'app' <[
 	
-	titleService
+	currentUser titleService
 	anime blog security shared
 ]>
 
@@ -30,8 +30,17 @@ app.config !($locationProvider) ->
 #*/
 
 # titleize
-app.run !(titleService) ->
+app.run !(currentUser, titleService, $rootScope, $location) ->
 	titleService.set-suffix "AT"
+
+	currentUser.get!then ($rootScope.user) ->
+
+	$rootScope.$on "$routeChangeStart" !(event, route) ->
+		user <- currentUser.get!then
+		if route.authenticate and not user
+			console.log "Private area"
+			event.preventDefault!
+			$location.path "/"
 
 # bind for setup
 <- angular.element document .ready
