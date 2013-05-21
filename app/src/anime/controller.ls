@@ -1,9 +1,8 @@
-module.exports = not function AnimeCtrl($scope, Anime, currentUser, titleService, $http)
+module.exports = not function AnimeCtrl(animes, titleService, $scope, $http)
 	titleService.set-title 'Animes'
 
-	$scope.animes = Anime.query!
-
 	$scope <<<
+		animes: animes
 		new-anime: {}
 		form-mode: false
 		order-clause: '-ep'

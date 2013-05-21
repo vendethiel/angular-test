@@ -1,7 +1,7 @@
 extends ../layout
 
 block body
-	div#articles(ng-controller="ArticleCtrl")
+	div#articles
 		article(ng-repeat="article in articles")
 			.infos By {{article.author}} in {{article.category}}
 			p {{article.content}}

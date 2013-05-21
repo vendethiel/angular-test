@@ -17,6 +17,14 @@ when requiring, it should be :
 	angular (ie ngResource)
 	generates (ie templates)
 ]>
+
+when declaring a module, it should be
+	.controller
+	.factory
+	.config
+	.run
+
+@todo first factory maybeh
 */
 app = angular.module 'app' <[
 	
@@ -24,12 +32,9 @@ app = angular.module 'app' <[
 	anime blog security shared
 ]>
 
-#/*
 app.config !($locationProvider) ->
 	$locationProvider.html5Mode true
-#*/
 
-# titleize
 app.run !(currentUser, titleService, $rootScope, $location) ->
 	titleService.set-suffix "AT"
 
@@ -37,7 +42,10 @@ app.run !(currentUser, titleService, $rootScope, $location) ->
 
 	$rootScope.$on "$routeChangeStart" !(event, route) ->
 		user <- currentUser.get!then
-		if route.authenticate and not user
+		is-admin = user?admin
+		if route.authenticate and not user or
+			route.admin and not user?admin
+		then
 			console.log "Private area"
 			event.preventDefault!
 			$location.path "/"

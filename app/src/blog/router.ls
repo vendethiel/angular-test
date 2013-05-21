@@ -1,5 +1,9 @@
 module.exports = !($routeProvider) ->
+	article-show =
+		template-url: '/src/blog/templates/article/index.html'
+		controller: 'ArticleCtrl'
+
 	$routeProvider
-		.when '/article' template-url: '/src/blog/templates/article/index.html'
-		.when '/category/:cat' template-url: '/src/blog/templates/article/index.html'
+		.when '/article' article-show
+		.when '/category/:cat' article-show
 		.otherwise redirect-to: '/article'

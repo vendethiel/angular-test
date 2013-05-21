@@ -1,4 +1,5 @@
-div#categories(ng-controller="CategoryCtrl")
-	ul
+#categories.dropdown.clearfix(ng-controller="CategoryCtrl")
+	ul.dropdown-menu(style="display: block;")
+		li: a(href="/article") (All)
 		li(ng-repeat="category in categories")
 			a(href="/category/{{category.id}}") {{category.name}}
