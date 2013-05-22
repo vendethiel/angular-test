@@ -49,7 +49,3 @@ app.run !(currentUser, titleService, $rootScope, $location) ->
 			console.log "Private area"
 			event.preventDefault!
 			$location.path "/"
-
-# bind for setup
-<- angular.element document .ready
-angular.bootstrap document, <[app]>
