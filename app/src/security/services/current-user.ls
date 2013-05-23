@@ -1,7 +1,13 @@
 angular.module 'currentUser' <[]>
-.factory 'currentUser' ($http) ->
+.factory 'currentUser' ($http, $rootScope) ->
 	get: ->
-		$http.get '/api/users' {+cache} .then ({data}) ->
+		# erm..
+		# this is needed for private routes but
+		# seriously, it sucks
+		if $rootScope.user
+			return then: -> that
+
+		$http.get '/api/session' {+cache} .then ({data}) ->
 			if data is 'null'
 				null
 			else data

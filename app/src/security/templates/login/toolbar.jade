@@ -2,6 +2,6 @@
 	p.navbar-text.pull-right(ng-show="user")
 		span.navbar-link
 			| Logged as {{user.username}}. 
-			a(href="/logout") Logout.
+			a(ng-click="logout") Logout.
 	div(ng-hide="user")
-		login-form
+		include ./form.jade
