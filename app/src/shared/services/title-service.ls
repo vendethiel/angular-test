@@ -1,12 +1,8 @@
 angular.module 'titleService' <[]>
-.factory 'titleService' ($document) ->
+.factory 'titleService' ($rootScope) ->
 	class TitleService
-		get-suffix: -> @suffix
-		set-suffix: (@suffix) ->
-
-		get-title: -> $document.prop 'title'
+		get-title: -> $rootScope.title
 		set-title: (title) ->
-			title += " - #that" if @suffix
-			$document.prop 'title' title
+			$rootScope.title = title
 
 	new TitleService

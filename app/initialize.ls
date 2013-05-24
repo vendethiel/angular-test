@@ -28,16 +28,14 @@ when declaring a module, it should be
 */
 app = angular.module 'app' <[
 	
-	currentUser titleService
+	currentUser
 	anime blog security shared
 ]>
 
 app.config !($locationProvider) ->
 	$locationProvider.html5Mode true
 
-app.run !(currentUser, titleService, $rootScope, $location) ->
-	titleService.set-suffix "AT"
-
+app.run !(currentUser, $rootScope, $location) ->
 	currentUser.get!then ($rootScope.user) ->
 
 	$rootScope.$on "$routeChangeStart" !(event, route) ->
