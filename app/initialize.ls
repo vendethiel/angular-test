@@ -15,7 +15,7 @@ when requiring, it should be :
 <[
 	own (ie titleService)
 	angular (ie ngResource)
-	generates (ie templates)
+	generated (ie templates)
 ]>
 
 when declaring a module, it should be
