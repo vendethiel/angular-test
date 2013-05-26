@@ -26,5 +26,11 @@
 
     "express": "3.2.4",
     "express-resource": "1.0.0"
+  },
+  "scripts": {
+    "test": "karma start test/karma.conf.js",
+    "test-e2e": "karma start test/karma-e2e.conf.js",
+    "test.cmd": "karma.cmd start test/karma.conf.js",
+    "test-e2e.cmd": "karma.cmd start test/karma-e2e.conf.js"
   }
 }
