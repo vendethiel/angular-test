@@ -10,10 +10,10 @@ files = [
 autoWatch = true;
 
 browsers = [
-	process.env['ProgramFiles(x86)'] + '\\Google\\Chrome\\Application\\chrome.exe'
+	'Chrome'
 ];
 
-singleRun = true;
+//singleRun = true;
 
 urlRoot = '/__karma/';
 
