@@ -1,8 +1,10 @@
 o = it
+
 describe 'anime list' !->
-	var $httpBackend
-	beforeEach inject !($injector) ->
-		$httpBackend := $injector.get '$httpBackend'
+	function login
+		input 'username' .enter 'Heya'
+		input 'password' .enter 'mdrlol'
+		element '#login [type="submit"]' .click!
 
 	describe "when logged off" !->
 		o 'should redirect' !->
@@ -14,7 +16,3 @@ describe 'anime list' !->
 			login!
 			expect browser!location!url! .toBe '/anime'
 			$httpBackend.flush!
-
-		function login
-			$httpBackend.when 'GET' '/api/session'
-				.respond '{"username": "Heya", "admin": 1}'
