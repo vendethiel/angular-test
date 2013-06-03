@@ -4,7 +4,7 @@ angular.module 'security.login.toolbar' <[]>
 		restrict: 'E'
 		replace: true
 		scope: true
-		controller: !($scope, $element, $attrs, $rootScope, $http) ->
+		controller: !($scope, $element, $attrs, $rootScope, $http, $location) ->
 			$scope.login = !->
 				return unless $scope.username and $scope.password
 				$http.post '/api/session' params: $scope{username, password}
@@ -16,6 +16,7 @@ angular.module 'security.login.toolbar' <[]>
 
 			$scope.logout = !->
 				return unless $rootScope.user
-				# /cur is for express-resource
-				$http.delete '/api/session/cur' .then !->
+
+				$http.delete '/api/session' .then !->
 					$rootScope.user = null
+					$location.path '/'

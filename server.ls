@@ -26,13 +26,15 @@ app.startServer = !->
 /*
  * Routing : Brunch catch-all and our API
  */
-app.use express.static PUBLIC_PATH
-app.use '/api' require './server/api'
+try
+	app.use express.static PUBLIC_PATH
+	app.use '/api' require './server/api'
+catch => console.log e
 
 /**
  * Index serving (catch-all route) for angular's html5Mode
  * Read index until it's available
- *  (should be using a helper in production)
+ *  (should be using a cache helper in production)
  */
 app.use !(req, res) ->
 	res.writeHeader 200 'Content-Type': 'text/html'

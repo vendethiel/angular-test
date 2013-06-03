@@ -1,6 +1,6 @@
 require! <[express express-resource]>
 
-app = express!
+app = module.exports = express!
 
 /**
  * Read payload (body)
@@ -16,9 +16,12 @@ app.use express.cookieParser!
 app.use express.session secret: 'angular-test-lol'
 
 /**
- * Serve resources
+ * Routes
  */
-for resource in <[animes session]>
-	app.resource resource, require "./#resource"
+app.use '/session' require './lib/session'
 
-module.exports = app
+/**
+ * Resources
+ */
+app.resource 'animes' require './lib/animes'
+app.resource 'articles' require './lib/articles'

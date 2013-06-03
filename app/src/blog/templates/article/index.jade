@@ -2,6 +2,7 @@ extends ../layout
 
 block body
 	div#articles
-		article(ng-repeat="article in articles")
-			.infos By {{article.author}} in {{article.category}}
+		article.container(ng-repeat="article in articles")
+			h3 {{article.name}}
 			p {{article.content}}
+			hr

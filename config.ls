@@ -42,7 +42,7 @@ exports.config =
     run: false
 
     #db: "#protocol://#user:#password@#host/#database"
-    db: "mysql://root@localhost/ng-test"
+    db: "mysql://root@localhost/ng-test?debug=true"
 
   # Enable or disable minifying of result js / css files.
   # minify: true
