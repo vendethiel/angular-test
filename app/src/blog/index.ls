@@ -1,5 +1,5 @@
-angular.module 'blog' <[blog.templates]>
-	.factory 'Article' require './resources/article'
-	.config require './router'
+require './article'
+require './category'
 
-require './controllers'
+angular.module 'blog' <[blog.article blog.category]>
+	.config require './router'

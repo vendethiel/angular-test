@@ -1,0 +1,7 @@
+form(ng-submit="addArticle()")
+	fieldset
+		input(type="text", ng-model="newArticle.title", placeholder="Title")
+		br
+		textarea(ng-model="newArticle.content") Content
+		br
+		button.btn(type="submit") Publish

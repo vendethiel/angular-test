@@ -3,6 +3,13 @@ extends ../layout
 block body
 	div#articles
 		article.container(ng-repeat="article in articles")
-			h3 {{article.name}}
+			h3(style="display: inline;") {{article.title}} 
+			i by {{article.author.name}}
+			br
+			
 			p {{article.content}}
 			hr
+
+	div(ng-show="user.admin")
+		a(ng-click="createMode=!createMode", ng-hide="createMode") Add article
+		article-form(ng-show="createMode")
