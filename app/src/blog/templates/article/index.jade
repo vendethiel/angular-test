@@ -4,7 +4,7 @@ block body
 	div#articles
 		article.container(ng-repeat="article in articles")
 			h3(style="display: inline;") {{article.title}} 
-			i by {{article.author.name}}
+			i by {{article.author_name}}
 			br
 			
 			p {{article.content}}

@@ -23,7 +23,7 @@ app.use orm.express config.server.db,
 app.startServer = !->
 	app.listen PORT, !-> console.log "Express started"
 
-# XXX move this to a provider somewhere
+# XXX special directory for this ?
 app.use require './server/user'
 
 /*
