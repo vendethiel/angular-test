@@ -1,0 +1,22 @@
+{
+  "name": "components-bootstrap",
+  "description": "Sleek, intuitive, and powerful front-end framework for faster and easier web development.",
+  "version": "2.3.2",
+  "keywords": [
+    "bootstrap",
+    "css"
+  ],
+  "license": "Apache-2.0",
+  "dependencies": {
+    "jquery": "~1.8.0"
+  },
+  "main": "js/bootstrap.js",
+  "gitHead": "5309651d7d3f273e9fdfdeea531439da026519d6",
+  "readme": "Bootstrap\n=========\n\nShim repository for [Bootstrap](https://github.com/twitter/bootstrap).\n\nThis package just provides the basic Bootstrap JavaScript, so you will require a\ntheme to go with it. For the default Bootstrap theme, you can use\n[components/bootstrap-default](https://github.com/components/bootstrap-default), or\nthe included plain CSS file assets.\n\nPackage Managers\n----------------\n\n* [Bower](http://twitter.github.com/bower/): `components-bootstrap`\n* [Component](https://github.com/component/component): `components/bootstrap`\n* [Composer](http://packagist.org/packages/components/bootstrap): `components/bootstrap`\n",
+  "readmeFilename": "README.md",
+  "_id": "components-bootstrap@2.3.2",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/components/bootstrap.git"
+  }
+}
