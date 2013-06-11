@@ -9,7 +9,7 @@ build.xml
 app/assets/
 _public
 node_modules/*
-components/*
+vendor
 npm-debug.log
 
 *.swp
