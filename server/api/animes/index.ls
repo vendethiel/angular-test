@@ -16,7 +16,7 @@ export update = !(req, res) ->
 	anime <<< req.body{ep}
 	anime.save!
 
-	res.send JSON.stringify anime
+	res.send anime
 
 export destroy = !(req, res) ->
 	params = user_id: req.session.user-id, id: req.params.anime

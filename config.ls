@@ -35,6 +35,10 @@ exports.config =
       joinTo:
         'js/dontUseMe' : /^app/ #slutty hack for Jade-auto-compiling
 
+  server:
+    path: 'server.ls'
+    db: "mysql://root@localhost/ng-test?debug=true"
+
   plugins:
     jade: {+pretty, locals}
     jade_angular:
@@ -42,15 +46,6 @@ exports.config =
       locals: locals
     javascripts: assets.javascripts
     stylesheets: assets.stylesheets
-
-  server:
-    path: 'server.ls'
-    port: 3333
-    base: ''
-    run: false
-
-    #db: "#protocol://#user:#password@#host/#database"
-    db: "mysql://root@localhost/ng-test?debug=true"
 
   # Enable or disable minifying of result js / css files.
   # minify: true
