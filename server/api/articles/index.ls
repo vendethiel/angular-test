@@ -8,7 +8,7 @@ export index = !(req, res) ->
 			article.user_name = article.user.username
 			delete article.user # contains the password ;_;
 
-	res.send JSON.stringify articles
+	res.send articles
 
 export create = !(req, res) ->
 	{title, content} = req.body
