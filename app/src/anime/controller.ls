@@ -3,7 +3,7 @@ module.exports = not function AnimeCtrl(Anime, titleService, $scope, $http)
 
 	$scope <<<
 		animes: Anime.query!
-		new-anime: {}
+		new-anime: ep: 0
 		form-mode: false
 		order-clause: '-ep'
 
@@ -16,8 +16,7 @@ module.exports = not function AnimeCtrl(Anime, titleService, $scope, $http)
 
 			@animes.push Anime.save @new-anime
 	
-			@new-anime = {}
-			@form-mode = false
+			@new-anime = ep: 0
 
 		removeAnime: !->
 			@animes[it]$delete!

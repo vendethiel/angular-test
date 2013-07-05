@@ -1,6 +1,6 @@
 angular.module 'security.login.toolbar' <[]>
 	.directive 'loginToolbar' ->
-		template-url: '/src/security/templates/login/toolbar.html'
+		template-url: '/security/login/toolbar.html'
 		restrict: 'E'
 		replace: true
 		scope: true

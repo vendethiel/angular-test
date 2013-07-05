@@ -1,6 +1,6 @@
 module.exports = !($routeProvider) ->
 	article-show =
-		template-url: '/src/blog/templates/article/index.html'
+		template-url: '/blog/article/index.html'
 		controller: 'ArticleCtrl'
 
 	$routeProvider
