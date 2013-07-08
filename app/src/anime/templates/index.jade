@@ -5,12 +5,12 @@ div
 			th Anime name
 			th Last ep seen
 		tbody
-			tr(ng-repeat="anime in animes | orderBy:orderClause")
+			tr(ng-repeat="anime in animes | orderBy:'-ep'")
 				td.anime-name {{anime.name}} 
 				td: b {{anime.ep}}
 				td: span(ng-click="changeEp(anime, 1)") [+]
 				td: span(ng-click="changeEp(anime, -1)") [-]
-				td: span.delete-button(ng-click="removeAnime($index)")= ' [x]'
+				td: span.delete-button(ng-click="removeAnime(anime)")= ' [x]'
 
 
 	a(href="", ng-click="formMode = true", ng-hide="formMode") Add anime
