@@ -9,7 +9,7 @@ div
 				td.anime-name {{anime.name}} 
 				td: b {{anime.ep}}
 				td: span(ng-click="changeEp(anime, 1)") [+]
-				td: span(ng-click="changeEp(anime, -1)") [-]
+				td: span(ng-click="changeEp(anime, -1)", ng-hide="anime.ep == 0") [-]
 				td: span.delete-button(ng-click="removeAnime(anime)")= ' [x]'
 
 

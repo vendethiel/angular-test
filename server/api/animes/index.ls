@@ -12,6 +12,7 @@ export create = !(req, res) ->
 
 export update = !(req, res) ->
 	err, [anime] <-! req.models.anime.find user_id: req.session.user-id, id: req.params.anime
+	return unless anime
 	
 	anime <<< req.body{ep}
 	anime.save!

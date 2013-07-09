@@ -25,4 +25,5 @@ module.exports = not function AnimeCtrl(Anime, titleService, $scope, $http)
 		changeEp: !(anime, modifier) ->
 			@anime.ep += modifier
 			@anime.ep >?= 0
+
 			@anime.$update!
