@@ -1,10 +1,11 @@
+mask = require 'json-mask'
 {format-articles} = require './helpers'
 
 export index = !(req, res) ->
 	err, articles <- req.models.article.all <[id Z]>
 	if err then res.end!
 
-	res.send format-articles articles
+	res.send mask articles, 'title,content,user/username'
 
 export create = !(req, res) ->
 	{title, content} = req.body
