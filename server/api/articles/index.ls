@@ -1,5 +1,4 @@
 mask = require 'json-mask'
-{format-articles} = require './helpers'
 
 export index = !(req, res) ->
 	err, articles <- req.models.article.all <[id Z]>
