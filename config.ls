@@ -1,18 +1,6 @@
 locals =
   title: 'AT'
 
-assets =
-  javascripts:
-    'vendor/angular/angular.js'
-    'vendor/angular-resource/angular-resource.js'
-    'vendor/angular-bootstrap/ui-bootstrap-tpls.js'
-    #'vendor/angular-ui/build/angular-ui.js'
-    #'vendor/sugar/sugar-full.development.js'
-  stylesheets:
-    'vendor/components-bootstrap/css/bootstrap.css'
-    'vendor/components-bootstrap/css/bootstrap-responsive.css'
-
-
 exports.config =
   paths:
     public: '_public'
@@ -20,9 +8,7 @@ exports.config =
     javascripts:
       joinTo:
         'js/app.js': /^app/
-        'js/vendor.js': /^vendor/
-      order:
-        before: assets.javascripts
+        'js/vendor.js': /^(bower_components|vendor)/
 
     templates:
       joinTo:
@@ -31,21 +17,21 @@ exports.config =
     stylesheets:
       joinTo:
         'css/app.css': /^app/
-        'css/vendor.css': /^vendor/
-      order:
-        before: assets.stylesheets
+        'css/vendor.css': /^(bower_components|vendor)/
 
   server:
     path: 'server.ls'
     db: "mysql://root@localhost/ng-test?debug=true"
 
   plugins:
-    jade: {+pretty, locals}
+    jaded:
+      static-patterns: /\.jade$/
+      jade: {+pretty, locals}
     jade_angular:
       modules_folder: 'templates'
       locals: locals
-    javascripts: assets.javascripts
-    stylesheets: assets.stylesheets
+      single_file: true
+      single_file_name: 'js/angular_templates.js'
 
   # Enable or disable minifying of result js / css files.
   # minify: true
