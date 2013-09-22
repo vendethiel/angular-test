@@ -10,7 +10,8 @@
     "css-brunch": "1.6.0",
     "stylus-brunch": "1.6.1",
     
-    "jaded-brunch": "1.7.4",
+    "jade-brunch": "1.7.2",
+    "static-jade-brunch": "1.4.11",
     "jade-angularjs-brunch": "1.0.5",
 
     "auto-reload-brunch": "1.6.3",
