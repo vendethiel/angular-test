@@ -23,6 +23,10 @@ app.use orm.express config.server.db,
 app.startServer = !->
 	app.listen PORT, !-> console.log "Express started"
 
+app.close = !->
+	console.log 'swag'
+	process.exit!
+
 /*
  * Routing : Brunch catch-all and our API
  */

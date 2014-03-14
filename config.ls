@@ -12,7 +12,7 @@ exports.config =
 
     templates:
       joinTo:
-        'js/dontUseMe' : /^app/ #slutty hack for Jade-auto-compiling
+        'js/dontUseMe' : /^app/ # hack for Jade-auto-compiling
 
     stylesheets:
       joinTo:

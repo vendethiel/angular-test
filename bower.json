@@ -2,32 +2,22 @@
   "name": "angular-test",
   "dependencies": {
     "angular": "1.2.14",
+    "angular-route": "1.2.14",
     "angular-resource": "1.2.14",
-    "angular-bootstrap": "0.8.0",
+    "angular-bootstrap": "0.10.0",
 
-
-    "components-bootstrap": "2.3.2"
+    "components-bootstrap": "3.1.1"
   },
   "overrides": {
-    "angular-bootstrap": {
-      "main": "ui-bootstrap.js",
-      "dependencies": {
-        "angular": "*"
-      }
-    },
-    "angular-ui": {
-      "main": "build/angular-ui.js",
-      "dependencies": {
-        "angular": "*"
-      }
-    },
     "jquery": {
       "main": "dégage de là"
+    },
+    "components-bootstrap": {
+      "main": "./css/bootstrap.css"
     }
   },
   "unused": {
     "angular-ui": "0.4",
     "sugar": "1.4.0"
-  },
-  "kruft": "'vendor/components-bootstrap/css/bootstrap.css' 'vendor/components-bootstrap/css/bootstrap-responsive.css'"
+  }
 }
