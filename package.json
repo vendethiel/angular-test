@@ -3,34 +3,32 @@
   "version": "0.0.1",
   "github": "Nami-Doc/angular-test",
   "dependencies": {
-    "javascript-brunch": "1.6.0",
-    "LiveScript": "1.1.1",
+    "javascript-brunch": "1.7.1",
+    "LiveScript": "1.2.0",
     "LiveScript-brunch": "1.6.0",
     
-    "css-brunch": "1.6.0",
-    "stylus-brunch": "1.6.1",
+    "css-brunch": "1.7.0",
+    "stylus-brunch": "1.8.0",
     
-    "jade-brunch": "1.7.2",
-    "static-jade-brunch": "1.4.11",
-    "jade-angularjs-brunch": "1.0.5",
+    "jaded-brunch": "1.7.8-hotfix",
+    "jade-angularjs-brunch": "git://github.com/nami-doc/jade-angularjs-brunch#patch-1",
 
-    "auto-reload-brunch": "1.6.3",
+    "auto-reload-brunch": "1.7.3",
     
-    "uglify-js-brunch": "1.7.0",
-    "clean-css-brunch": "1.6.0",
+    "uglify-js-brunch": "1.7.7",
+    "clean-css-brunch": "1.7.1",
 
 
     
-    "mysql": "2.0.0-alpha8",
-    "orm": "2.0.12",
+    "mysql": "2.1.0",
+    "orm": "2.1.3",
 
-    "express": "3.2.4",
+    "express": "3.5.0",
     "express-resource": "1.0.0",
-
-    "json-mask": "0.2.0",
-
     "express-orm-handler": "0.0.2",
-    "express-orm-api-session": "0.0.1"
+    "express-orm-api-session": "0.0.1",
+
+    "json-mask": "0.2.0"
   },
   "scripts": {
     "test": "karma start test/karma.conf.js",

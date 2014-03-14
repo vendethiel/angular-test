@@ -24,6 +24,8 @@ exports.config =
     db: "mysql://root@localhost/ng-test?debug=true"
 
   plugins:
+    jaded:
+      static-patterns: //^app/index.jade$//
     jade_angular:
       modules_folder: 'templates'
       locals: locals
