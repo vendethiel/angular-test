@@ -4,18 +4,17 @@ module.exports = !(db, models) ->
 		password: String
 		admin: Boolean
 
-
 	models.anime = db.define 'animes',
 		name: String
 		ep: Number
-
-	models.anime.hasOne 'user', models.user, {reverse: 'animes', +required}
-
 
 	models.article = db.define 'articles',
 		title: String
 		content: String
 
+	# user -> animes
+	models.anime.hasOne 'user', models.user, {reverse: 'animes', +required}
+	# user -> articles
 	models.article.hasOne 'user', models.user, {reverse: 'articles', +required, +autoFetch}
 
 /*

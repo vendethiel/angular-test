@@ -30,7 +30,7 @@ exports.config =
       modules_folder: 'templates'
       locals: locals
       single_file: true
-      single_file_name: 'js/angular_templates.js'
+      single_file_name: 'js/templates.js'
 
   # Enable or disable minifying of result js / css files.
   # minify: true

@@ -11,7 +11,7 @@
     "stylus-brunch": "1.8.0",
     
     "jaded-brunch": "1.7.8-hotfix",
-    "jade-angularjs-brunch": "git://github.com/nami-doc/jade-angularjs-brunch#patch-1",
+    "jade-angularjs-brunch2": "git://github.com/nami-doc/jade-angularjs-brunch2",
 
     "auto-reload-brunch": "1.7.3",
     
