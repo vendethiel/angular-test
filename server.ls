@@ -23,7 +23,7 @@ app.use orm.express config.server.db,
 app.startServer = !->
 	app.listen PORT, !-> console.log "Express started"
 
-app.close = !->
+app.stop = !->
 	console.log 'swag'
 	process.exit!
 

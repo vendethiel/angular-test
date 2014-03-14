@@ -5,6 +5,7 @@ for name in <[anime blog security shared]>
 	require "src/#name"
 
 /*
+require order :
 <[
 	deps (like ui)
 	own components (like titleService)

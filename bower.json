@@ -6,14 +6,14 @@
     "angular-resource": "1.2.14",
     "angular-bootstrap": "0.10.0",
 
-    "components-bootstrap": "3.1.1"
+    "components-bootstrap-default": "3.0.3"
   },
   "overrides": {
     "jquery": {
-      "main": "dégage de là"
+      "main": "g t f o"
     },
     "components-bootstrap": {
-      "main": "./css/bootstrap.css"
+      "main": "superseded by -default"
     }
   },
   "unused": {
