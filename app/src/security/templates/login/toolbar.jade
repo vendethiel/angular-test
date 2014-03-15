@@ -1,7 +1,8 @@
-.navbar-form.navbar-right
-	p.navbar-text.pull-right(ng-show="user")
-		span.navbar-link
-			| Logged as {{user.username}}. 
-			a(ng-click="logout()") Logout.
-	div(ng-hide="user")
-		include ./form.jade
+.navbar-collapse.collapse
+	.navbar-right
+		p.navbar-text(ng-show="user")
+			span.navbar-link
+				| Logged as {{user.username}}. 
+				a(ng-click="logout()") Logout.
+		div(ng-hide="user")
+			include ./form.jade
