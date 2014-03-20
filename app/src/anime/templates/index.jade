@@ -15,6 +15,7 @@ div
 
 	a(href="", ng-click="formMode = true", ng-hide="formMode") Add anime
 	form(ng-submit="addAnime()", ng-show="formMode")
-		input(ng-model="newAnime.name", placeholder="new anime name")
-		input(ng-model="newAnime.ep", placeholder="ep", size="1")
-		input(type="submit", value="Add!")
+		.input-group
+			.input-group-addon: input.form-control(ng-model="newAnime.name", placeholder="new anime name")
+			.input-group-addon: input.form-control(ng-model="newAnime.ep", placeholder="ep", size="1")
+			.input-group-addon: input(type="submit", value="Add!")
